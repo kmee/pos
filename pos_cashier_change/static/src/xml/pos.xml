@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+     <t t-extend="UsernameWidget">
+     	<t t-jquery='.username' t-operation='replace'>
+            <span class="username" id="pos_pos_cashier">
+            	<t t-esc="widget.get_name()" />
+        	</span>
+        </t>
+    </t>
+
+    <t t-name="CashierPopupWidget">
+        <div class="modal-dialog custom-dialog">
+            <div class="pos_cashier_popup">
+                <p class="pos_top_title">Change Cashier</p>
+                <div class="selection scrollable-y touch-scrollable" >
+                    <span class="placeholder-CashierListScreenWidget" />
+                </div>
+                <div class="footer">
+                	<div class="pos_cashier_button cancel" id="pos_cashier_cance">
+                		Cancel
+                	</div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="CashierWidget">
+        <t t-foreach='widget.model' t-as='user'>
+        <div  t-att-data-product-id="user.id" class='posselection-item'>
+        	<a href="#" t-att-id="user.id">
+			 	<div >
+			 		<t t-esc="user.name"/>
+                    <t t-esc="simple1"/>
+				</div>
+			</a>
+        </div>
+        </t>
+    </t>
+     <t t-name="CashierScreenWidget">
+        <div >
+            <ol  class="cashier_list">
+            </ol>
+        </div>
+    </t>
+
+    <t t-name="PasswordPopupWidget">
+        <div class="modal-dialog custom-dialog">
+            <div class="pos_password_popup">
+                    <p class="pos_top_title"><i class="fa fa-lock"></i> Choose Password</p>
+                    <br/>
+                <div class="pos_input_password"/>
+                <br/>
+                <div class="pos_numpad">
+                    <button class="pos_input_button pos_password_button_id" id="1">1</button>
+                    <button class="pos_input_button pos_password_button_id" id="2">2</button>
+                    <button class="pos_input_button pos_password_button_id" id="3">3</button>
+                    <br />
+                    <button class="pos_input_button pos_password_button_id" id="4">4</button>
+                    <button class="pos_input_button pos_password_button_id" id="5">5</button>
+                    <button class="pos_input_button pos_password_button_id" id="6">6</button>
+                    <br />
+                    <button class="pos_input_button pos_password_button_id" id="7">7</button>
+                    <button class="pos_input_button pos_password_button_id" id="8">8</button>
+                    <button class="pos_input_button pos_password_button_id" id="9">9</button>
+                    <br />
+                    <button class="pos_input_button pos_password_button_id" id="C">C</button>
+                    <button class="pos_input_button pos_password_button_id" id="0">0</button>
+                    <button class="pos_input_button numpad-backspace pos_password_button_id" id="back">
+                        <img src="/point_of_sale/static/src/img/backspace.png" width="24" height="21" />
+                    </button>
+                    <br />
+                </div>
+                <div class="footer">
+                    <div style="float:left">
+                    <div class="pos_password_button cancel pos_password_widget_ok" id="pos_password_button">
+                        Ok
+                    </div>
+                    <div class="pos_password_button cancel pos_password_widget_cance" id="pos_password_button">
+                        Cancel
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
