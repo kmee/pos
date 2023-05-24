@@ -27,6 +27,11 @@ odoo.define("pos_product_control.ClosePosPopup", function (require) {
                 if (this.checkClosingValues()) {
                     await this.rpc({
                         model: "pos.session",
+                        method: "update_product_opening_value",
+                        args: [this.env.pos.pos_session.id, this.env.pos.pos_session.productControlInitial],
+                    });
+                    await this.rpc({
+                        model: "pos.session",
                         method: "update_product_closing_value",
                         args: [this.env.pos.pos_session.id, this.productControl],
                     });

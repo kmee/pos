@@ -25,14 +25,15 @@ odoo.define("pos_productControl.CashBoxOpening", function (require) {
 
             async startSession() {
                 if (this.checkOpeningValues()) {
-                    await this.rpc({
+                    this.env.pos.pos_session.productControlInitial = this.productControl;
+                    this.rpc({
                         model: "pos.session",
                         method: "update_product_opening_value",
                         args: [this.env.pos.pos_session.id, this.productControl],
                     });
                     super.startSession();
                 } else {
-                    await this.showPopup("ErrorPopup", {
+                    this.showPopup("ErrorPopup", {
                         title: this.env._t("Value Error"),
                         body: this.env._t(
                             "One of the fields for product control is empty."
