@@ -128,6 +128,11 @@ odoo.define("pos_cash_control.ClosePosPopup", function (require) {
                 // eslint-disable-next-line init-declarations
                 let response;
                 if (this.cashControl) {
+                    await this.rpc({
+                        model: 'pos.session',
+                        method: 'set_cashbox_pos',
+                        args: [this.env.pos.pos_session.id, this.env.pos.bank_statement.balance_start, this.env.pos.pos_session.notes],
+                    });
                     response = await this.rpc({
                         model: "pos.session",
                         method: "post_closing_cash_details",
