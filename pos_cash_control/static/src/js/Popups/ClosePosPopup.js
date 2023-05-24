@@ -122,12 +122,39 @@ odoo.define("pos_cash_control.ClosePosPopup", function (require) {
         closePos() {
             this.trigger("close-pos");
         }
+        checkUnpaidOrders() {
+            let existsUnpaidOrders = false;
+            const unpaidOrders = this.env.pos.db.get_unpaid_orders();
+            for (const order_index in unpaidOrders) {
+                if (unpaidOrders[order_index].statement_ids.length > 0) {
+                    existsUnpaidOrders = true;
+                    break;
+                }
+            }
+
+            return existsUnpaidOrders;
+        }
         async closeSession() {
+            let existsUnpaidOrders = this.checkUnpaidOrders();
+            if (existsUnpaidOrders) {
+                await this.showPopup("ErrorPopup", {
+                    title: this.env._t("Closing session error"),
+                    body: this.env._t(
+                        "Exists orders at payment state! Finish it or cancel these orders."
+                    ),
+                });
+                return;
+            }
             if (this.canCloseSession() && !this.closeSessionClicked) {
                 this.closeSessionClicked = true;
                 // eslint-disable-next-line init-declarations
                 let response;
                 if (this.cashControl) {
+                    await this.rpc({
+                        model: 'pos.session',
+                        method: 'set_cashbox_pos',
+                        args: [this.env.pos.pos_session.id, this.env.pos.bank_statement.balance_start, this.env.pos.pos_session.notes],
+                    });
                     response = await this.rpc({
                         model: "pos.session",
                         method: "post_closing_cash_details",

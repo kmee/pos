@@ -44,6 +44,12 @@
                     src="/pos_cash_control/static/src/js/Popups/ClosePosPopup.js"
                 />
             </xpath>
+            <xpath expr="." position="inside">
+                <script
+                    type="text/javascript"
+                    src="/pos_cash_control/static/src/js/Screens/ProductScreen/CashBoxOpening.js"
+                />
+            </xpath>
 
             <xpath expr="//link[@id='pos-stylesheet']" position="after">
                 <link

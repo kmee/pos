@@ -69,6 +69,15 @@ msgstr ""
 "Você será redirecionado para o back-end para fechar manualmente a sessão."
 
 #. module: pos_cash_control
+#. openerp-web
+#: code:addons/pos_cash_control/static/src/js/Popups/ClosePosPopup.js:0
+#, python-format
+msgid ""
+"Exists orders at payment state! Finish it or cancel these orders."
+msgstr ""
+"Existem contas em estado para pagamento! Finalize ou cancele essas contas."
+
+#. module: pos_cash_control
 #: model_terms:ir.ui.view,arch_db:pos_cash_control.view_pos_bill_form
 #: model_terms:ir.ui.view,arch_db:pos_cash_control.view_pos_bill_tree
 msgid "Bills"
