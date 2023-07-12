@@ -2,7 +2,7 @@
 # License LGPL-3 or later (https://www.gnu.org/licenses/lgpl).
 
 {
-    "name": "Pos CRM",
+    "name": "Pos Ask Vat",
     "summary": """Point of Sale: Ask Customer Code or Tax ID""",
     "version": "14.0.1.0.0",
     "author": "KMEE, Odoo Community Association (OCA)",

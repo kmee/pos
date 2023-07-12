@@ -4,7 +4,7 @@
 <odoo>
 
     <record model="ir.ui.view" id="pos_order_form_view">
-        <field name="name">pos.order.form (in pos_crm)</field>
+        <field name="name">pos.order.form (in pos_ask_vat)</field>
         <field name="model">pos.order</field>
         <field name="inherit_id" ref="point_of_sale.view_pos_pos_form" />
         <field name="arch" type="xml">

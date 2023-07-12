@@ -1,4 +1,4 @@
-odoo.define("pos_crm.TaxIdPopup", function (require) {
+odoo.define("pos_ask_vat.TaxIdPopup", function (require) {
     "use strict";
     var core = require("web.core");
     var _t = core._t;

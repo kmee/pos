@@ -3,7 +3,7 @@ Copyright (C) 2022-Today KMEE (https://kmee.com.br)
  License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 */
 
-odoo.define("pos_crm.models", function (require) {
+odoo.define("pos_ask_vat.models", function (require) {
     "use strict";
 
     const models = require("point_of_sale.models");
@@ -47,7 +47,7 @@ odoo.define("pos_crm.models", function (require) {
             const client = this.get_client();
             const posConfig = this.pos.config;
 
-            if (!client && posConfig.pos_crm_question === screen) {
+            if (!client && posConfig.pos_ask_vat_question === screen) {
                 const result = await component.showPopup("TaxIdPopup", {
                     title: _t("Customer Tax ID"),
                     startingValue: 0,
@@ -58,7 +58,7 @@ odoo.define("pos_crm.models", function (require) {
                         this.pos.db.get_partners_by_tax_id(result.payload) ||
                         this.pos.db.get_partner_by_barcode(result.payload);
 
-                    if (partner.length === 0 && posConfig.pos_crm_auto_create_partner) {
+                    if (partner.length === 0 && posConfig.pos_ask_vat_auto_create_partner) {
                         try {
                             const partnerId = await this.pos.rpc({
                                 model: "res.partner",

@@ -3,7 +3,7 @@ Copyright (C) 2022-Today KMEE (https://kmee.com.br)
  License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 */
 
-odoo.define("pos_crm.NumberBuffer", function (require) {
+odoo.define("pos_ask_vat.NumberBuffer", function (require) {
     "use strict";
 
     var NumberBuffer = require("point_of_sale.NumberBuffer");

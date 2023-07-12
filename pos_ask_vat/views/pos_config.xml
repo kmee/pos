@@ -10,40 +10,40 @@
                 <div class="row mt16 o_settings_container" id="customers">
                     <div class="col-12 col-lg-6 o_setting_box">
                         <div class="o_setting_left_pane">
-                            <field name="iface_pos_crm" id="iface_pos_crm" />
+                            <field name="iface_pos_ask_vat" id="iface_pos_ask_vat" />
                         </div>
                         <div class="o_setting_right_pane">
-                            <label for="iface_pos_crm" />
+                            <label for="iface_pos_ask_vat" />
                             <div class="text-muted">
                                 Create customers in POS workflow
                             </div>
                             <div
                                 class="content-group mt16"
-                                attrs="{'invisible': [('iface_pos_crm', '=', False)]}"
+                                attrs="{'invisible': [('iface_pos_ask_vat', '=', False)]}"
                             >
                                 <div class="row mt16">
                                     <label
-                                        string="CRM Question"
-                                        for="pos_crm_question"
+                                        string="VAT Question"
+                                        for="pos_ask_vat_question"
                                         class="col-lg-3 o_light_label"
                                     />
                                     <field
-                                        name="pos_crm_question"
-                                        id="pos_crm_question"
+                                        name="pos_ask_vat_question"
+                                        id="pos_ask_vat_question"
                                     />
                                 </div>
                                 <div
                                     class="row mt16"
-                                    attrs="{'invisible': [('pos_crm_question', 'not in', ['payment', 'order'])]}"
+                                    attrs="{'invisible': [('pos_ask_vat_question', 'not in', ['payment', 'order'])]}"
                                 >
                                     <label
                                         string="Autocreate Partner"
-                                        for="pos_crm_auto_create_partner"
+                                        for="pos_ask_vat_auto_create_partner"
                                         class="col-lg-3 o_light_label"
                                     />
                                     <field
-                                        name="pos_crm_auto_create_partner"
-                                        id="pos_crm_auto_create_partner"
+                                        name="pos_ask_vat_auto_create_partner"
+                                        id="pos_ask_vat_auto_create_partner"
                                     />
                                 </div>
                             </div>

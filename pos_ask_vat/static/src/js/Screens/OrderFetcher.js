@@ -1,4 +1,4 @@
-odoo.define("pos_crm.OrderFetcher", function (require) {
+odoo.define("pos_ask_vat.OrderFetcher", function (require) {
     "use strict";
 
     const OrderFetcher = require("point_of_sale.OrderFetcher");

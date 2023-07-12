@@ -1,4 +1,4 @@
-odoo.define("pos_crm.OrderManagementControlPanel", function (require) {
+odoo.define("pos_ask_vat.OrderManagementControlPanel", function (require) {
     "use strict";
 
     const Registries = require("point_of_sale.Registries");
