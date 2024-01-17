@@ -20,6 +20,7 @@ var PosModelSuper = models.PosModel;
 models.load_models({
     model:  'pos.order',
     fields: ['name', 'partner_id','date_order','amount_total','pos_reference','lines','state','session_id','company_id'],
+    domain: function(self){ return [['session_id', '=', self.pos_session.id]]; },
     loaded: function(self, orders){
         self.paid_orders = orders;
         }
@@ -28,6 +29,7 @@ models.load_models({
 models.load_models({
     model:  'pos.order.line',
     fields: ['product_id', 'qty', 'discount','price_subtotal_incl'],
+    domain: function(self){ return [['order_id', 'in', self.paid_orders]]; },
     loaded: function(self, order_lines){
         self.order_lines = order_lines;
         }
