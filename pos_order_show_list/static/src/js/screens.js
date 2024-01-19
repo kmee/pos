@@ -29,7 +29,7 @@ models.load_models({
 models.load_models({
     model:  'pos.order.line',
     fields: ['product_id', 'qty', 'discount','price_subtotal_incl'],
-    domain: function(self){ return [['order_id', 'in', self.paid_orders]]; },
+    domain: function(self){ return [['order_id', 'in', self.paid_orders.map(o => o.id)]]; },
     loaded: function(self, order_lines){
         self.order_lines = order_lines;
         }
