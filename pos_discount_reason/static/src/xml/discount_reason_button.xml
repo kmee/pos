@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="pos_discount_reason.DiscountReasonButton">
+        <button class="control-button btn btn-secondary" t-on-click="onClick">
+            <i class="fa fa-percent me-1" />
+            Discount Reason
+        </button>
+    </t>
+
+</templates>

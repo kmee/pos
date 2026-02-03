@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 KMEE
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl). -->
+<odoo noupdate="1">
+
+    <record id="pos_discount_reason_10" model="pos.discount.reason">
+        <field name="name">Promotional Discount 10%</field>
+        <field name="percent">0.10</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="pos_discount_reason_20" model="pos.discount.reason">
+        <field name="name">Promotional Discount 20%</field>
+        <field name="percent">0.20</field>
+        <field name="sequence">20</field>
+    </record>
+
+</odoo>
