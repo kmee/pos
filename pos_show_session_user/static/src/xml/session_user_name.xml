@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="pos_show_session_user.SessionUserName">
+        <div class="oe_status d-flex align-items-center me-2">
+            <span class="username badge bg-secondary">
+                <i class="fa fa-user me-1" />
+                <t t-esc="username" />
+            </span>
+        </div>
+    </t>
+
+</templates>
