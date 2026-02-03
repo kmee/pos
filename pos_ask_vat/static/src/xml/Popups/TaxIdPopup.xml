@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="pos_ask_vat.TaxIdPopup">
+        <Dialog title="props.title" size="'md'">
+            <div class="popup popup-number d-flex flex-column align-items-center p-3">
+                <div class="popup-input value active mb-3 p-3 border rounded bg-light fs-4 w-100 text-center">
+                    <t t-esc="inputBuffer" />
+                </div>
+                <div class="popup-numpad d-grid gap-2" style="grid-template-columns: repeat(4, 1fr);">
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('1')">1</button>
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('2')">2</button>
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('3')">3</button>
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('/')">/</button>
+
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('4')">4</button>
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('5')">5</button>
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('6')">6</button>
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('.')">.</button>
+
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('7')">7</button>
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('8')">8</button>
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('9')">9</button>
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('-')">-</button>
+
+                    <button class="btn btn-warning btn-lg" t-on-click="() => this.sendInput('Delete')">C</button>
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('0')">0</button>
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('Backspace')">
+                        <i class="fa fa-long-arrow-left" />
+                    </button>
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.sendInput('X')">X</button>
+                </div>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-secondary" t-on-click="cancel">Cancel</button>
+                <button class="btn btn-primary" t-on-click="confirm">Confirm</button>
+            </t>
+        </Dialog>
+    </t>
+
+</templates>
