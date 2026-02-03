@@ -8,39 +8,31 @@
         <field name="model">pos.config</field>
         <field name="inherit_id" ref="point_of_sale.pos_config_view_form" />
         <field name="arch" type="xml">
-            <xpath expr="//div[@id='other_tax_settings']/.." position="after">
-                <div class="col-12 col-lg-6 o_setting_box" id="pos_ask_vat_setting">
-                    <div class="o_setting_left_pane">
-                        <field name="iface_pos_ask_vat" />
-                    </div>
-                    <div class="o_setting_right_pane">
-                        <label for="iface_pos_ask_vat" string="Ask VAT" />
-                        <div class="text-muted">
-                            Ask customers for Tax ID during checkout
+            <xpath expr="//setting[@id='other_devices']" position="after">
+                <setting string="Ask VAT" help="Ask customers for Tax ID during checkout">
+                    <field name="iface_pos_ask_vat" />
+                    <div class="content-group mt16" invisible="not iface_pos_ask_vat">
+                        <div class="row mt-2">
+                            <label
+                                string="When to Ask"
+                                for="pos_ask_vat_question"
+                                class="col-lg-4 o_light_label"
+                            />
+                            <field name="pos_ask_vat_question" />
                         </div>
-                        <div class="content-group mt-3" invisible="not iface_pos_ask_vat">
-                            <div class="row mt-2">
-                                <label
-                                    string="When to Ask"
-                                    for="pos_ask_vat_question"
-                                    class="col-lg-4 o_light_label"
-                                />
-                                <field name="pos_ask_vat_question" />
-                            </div>
-                            <div
-                                class="row mt-2"
-                                invisible="pos_ask_vat_question not in ['payment']"
-                            >
-                                <label
-                                    string="Auto Create Partner"
-                                    for="pos_ask_vat_auto_create_partner"
-                                    class="col-lg-4 o_light_label"
-                                />
-                                <field name="pos_ask_vat_auto_create_partner" />
-                            </div>
+                        <div
+                            class="row mt-2"
+                            invisible="pos_ask_vat_question not in ['payment']"
+                        >
+                            <label
+                                string="Auto Create Partner"
+                                for="pos_ask_vat_auto_create_partner"
+                                class="col-lg-4 o_light_label"
+                            />
+                            <field name="pos_ask_vat_auto_create_partner" />
                         </div>
                     </div>
-                </div>
+                </setting>
             </xpath>
         </field>
     </record>
