@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 KMEE
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl). -->
+<odoo>
+
+    <record id="pos_close_session_wizard_view_form" model="ir.ui.view">
+        <field name="name">pos.close.session.wizard.form</field>
+        <field name="model">pos.close.session.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Close Session">
+                <group>
+                    <field name="session_id" readonly="1" />
+                    <field name="message" readonly="1" />
+                </group>
+                <footer>
+                    <button
+                        string="Force Close"
+                        name="action_force_close"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>
