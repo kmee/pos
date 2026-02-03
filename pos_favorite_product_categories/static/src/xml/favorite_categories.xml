@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+
+    <!-- This template can be extended to add a favorite categories bar -->
+    <t t-name="pos_favorite_product_categories.FavoriteCategoriesBar">
+        <div class="favorite-categories-bar d-flex gap-2 mb-2" t-if="pos.getFavoriteCategories().length > 0">
+            <t t-foreach="pos.getFavoriteCategories()" t-as="category" t-key="category.id">
+                <button 
+                    class="btn btn-secondary favorite-category-btn"
+                    t-on-click="() => this.selectCategory(category)"
+                >
+                    <t t-esc="category.name" />
+                </button>
+            </t>
+        </div>
+    </t>
+
+</templates>

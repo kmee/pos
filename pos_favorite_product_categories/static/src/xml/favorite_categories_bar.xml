@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Copyright 2022 KMEE
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<templates id="template" xml:space="preserve">
+
+    <t t-name="pos_favorite_product_categories.FavoriteCategoriesBar">
+        <div class="favorite-categories-bar d-flex flex-wrap gap-1 p-1" t-if="props.categories and props.categories.length > 0">
+            <t t-foreach="props.categories" t-as="category" t-key="category.id">
+                <button
+                    class="btn btn-secondary btn-sm category-simple-button"
+                    t-on-click="() => this.selectCategory(category)"
+                >
+                    <t t-if="pos.config.iface_display_categ_images and category.has_image">
+                        <img
+                            class="category-image me-1"
+                            t-att-src="getCategoryImageUrl(category)"
+                            t-att-alt="category.name"
+                        />
+                    </t>
+                    <span t-esc="category.name" />
+                </button>
+            </t>
+        </div>
+    </t>
+
+</templates>

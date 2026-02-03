@@ -1,0 +1,9 @@
+.favorite-categories-bar {
+    padding: 5px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.favorite-category-btn {
+    font-weight: bold;
+}

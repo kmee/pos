@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 KMEE
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="pos_category_view_form" model="ir.ui.view">
+        <field name="name">pos.category.form.favorite</field>
+        <field name="model">pos.category</field>
+        <field name="inherit_id" ref="point_of_sale.product_pos_category_form_view" />
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="favorite" />
+                <field name="only_favorite_bar" invisible="favorite != '1'" />
+            </field>
+        </field>
+    </record>
+
+</odoo>
