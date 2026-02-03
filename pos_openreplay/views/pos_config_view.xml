@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 KMEE
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="pos_config_view_form">
+        <field name="name">pos.config.form.openreplay</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='order_edit']/.." position="before">
+                <div class="col-12 col-lg-6 o_setting_box" id="open_replay_setting">
+                    <div class="o_setting_left_pane">
+                        <field name="open_replay_active" />
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="open_replay_active" string="OpenReplay" />
+                        <div class="text-muted">
+                            OpenReplay is an open-source session replay stack that helps developers build delightful products.
+                        </div>
+                        <div
+                            class="content-group mt-3"
+                            invisible="not open_replay_active"
+                        >
+                            <div class="row mt-2">
+                                <label
+                                    string="Server Address"
+                                    for="open_replay_ingest_point"
+                                    class="col-lg-4 o_light_label"
+                                />
+                                <field
+                                    name="open_replay_ingest_point"
+                                    placeholder="https://your-openreplay-server.com/ingest"
+                                />
+                            </div>
+                            <div class="row mt-2">
+                                <label
+                                    string="Project Key"
+                                    for="open_replay_project_key"
+                                    class="col-lg-4 o_light_label"
+                                />
+                                <field
+                                    name="open_replay_project_key"
+                                    placeholder="your-project-key"
+                                />
+                            </div>
+                            <div class="row mt-2">
+                                <label
+                                    string="Input Mode"
+                                    for="open_replay_default_input_mode"
+                                    class="col-lg-4 o_light_label"
+                                />
+                                <field name="open_replay_default_input_mode" />
+                            </div>
+                            <div class="row mt-2">
+                                <field
+                                    name="open_replay_obscure_text_numbers"
+                                    class="oe_inline"
+                                />
+                                <label
+                                    for="open_replay_obscure_text_numbers"
+                                    class="ms-2"
+                                />
+                            </div>
+                            <div class="row mt-2">
+                                <field
+                                    name="open_replay_obscure_text_emails"
+                                    class="oe_inline"
+                                />
+                                <label
+                                    for="open_replay_obscure_text_emails"
+                                    class="ms-2"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

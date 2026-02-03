@@ -1,0 +1,2 @@
+- Luis Felipe Mileo <mileo@kmee.com.br>
+- Ygor Carvalho <ygcarvalh@gmail.com>
